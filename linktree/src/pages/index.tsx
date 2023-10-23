@@ -43,14 +43,15 @@ export default function Home() {
       <a
         className="z-10 fixed top-[35%] text-black text-outline text-xl flex space-x-2 right-0"
         style={{ fontFamily: "MangaSpeak" }}
+        href="https://www.youtube.com/watch?v=KLQpWYPGEcY"
       >
-              <FaArrowRight />   Official Website
+        <FaArrowRight /> Official Website
       </a>
       <span
         className="fixed top-[50%] text-black text-xl text-outline z-10"
         style={{ fontFamily: "MangaSpeak" }}
       >
-Follow My Socials
+        Follow My Socials
       </span>
       <div
         className="z-10 fixed bottom-[20%] right-0 p-1 space-y-4"
