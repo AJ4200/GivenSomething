@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+main
+{
+    animation: animatedBackground 30s linear infinite;
+  height: 100vh;
+  overflow: auto;
+  
+}
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 600px 0;
+  }
+}
+@font-face {
+  font-family: 'MangaSpeak';
+  src: url('/fonts/MangaSpeak-BaBl.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Manga';
+  src: url('/fonts/Manga-4vx6.ttf') format('truetype');
+}
+.text-outline {
+
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; /* Set the outline effect */
+}
