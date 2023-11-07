@@ -8,7 +8,7 @@ const More: React.FC = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       const channelId = "https://www.youtube.com/@GivenSomething"; // Replace with your channel ID
-      const apiKey = "AIzaSyB_7vZ1QRlmfVxW5FU-ZsSsQkPaEtBtMSI"; // Replace with your API key
+      const apiKey = ""; // Replace with your API key
       const maxResults = 10; // Change to fetch more or less videos
 
       const response = await fetch(
