@@ -1,5 +1,7 @@
+import classnames from "classnames";
 import React, { useState, useEffect } from "react";
-
+import { AiFillRightCircle, AiFillCloseCircle } from "react-icons/ai";
+import axios from "axios";
 
 const More: React.FC = () => {
   const [showList, setShowList] = useState(false);
@@ -7,16 +9,19 @@ const More: React.FC = () => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const channelId = "https://www.youtube.com/@GivenSomething"; // Replace with your channel ID
-      const apiKey = process.env.GOOGLE_API_KEY; // Replace with your API key
-      const maxResults = 10; // Change to fetch more or less videos
+      const channelId = "https://www.youtube.com/@GivenSomething"; 
+      const apiKey =
+        process.env.GOOGLE_API_KEY; 
+      const maxResults = 10;
 
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=${maxResults}&key=${apiKey}`
-      );
-      const data = await response.json();
-
-      setVideos(data.items);
+      try {
+        const response = await axios.get(
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=${maxResults}&key=${apiKey}`
+        );
+        setVideos(response.data.items);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     fetchVideos();
@@ -31,18 +36,33 @@ const More: React.FC = () => {
   };
 
   return (
-    <div>
+    <div
+      className={classnames(
+        "text-center border-[0.8rem] w-auto h-3/5",
+        "border-black bg-slate-50/50"
+      )}
+      style={{
+        transform: "skew(-20deg)",
+      }}
+    >
       {showList ? (
         <div>
           <ul>
-            {videos.map((video:any) => (
-              <li key={video.id.videoId}>{video.snippet.title}</li>
-            ))}
+            {videos &&
+              videos.map((video: any) => (
+                <li key={video.id.videoId}>{video.snippet.title}</li>
+              ))}
           </ul>
-          <button onClick={handleCloseClick}>Close</button>
+          <button className="md:w-auto m-4 -ml-12 -mr-12 md:m-0 " onClick={handleCloseClick}>
+            close
+            <AiFillCloseCircle size={35} />
+          </button>
         </div>
       ) : (
-        <button onClick={handleMoreClick}>More</button>
+        <button className="md:w-auto m-4 -ml-12 -mr-12 md:m-0 " onClick={handleMoreClick}>
+          more
+          <AiFillRightCircle size={35} />
+        </button>
       )}
     </div>
   );

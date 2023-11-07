@@ -15,7 +15,14 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+@font-face {
+  font-family: 'NinjaNaruto';
+  src: url('/fonts/NinjaNaruto-YOn4.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OnePiece';
+  src: url('/fonts/OnePiece-zAqL.ttf') format('truetype');
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,6 +31,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: "NinjaNaruto";
+    color:black;
+    overflow: hidden;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 main {
   animation: animatedBackground 30s linear infinite;
@@ -35,4 +46,28 @@ main {
   to {
     background-position: 600px 0;
   }
+}
+.skew
+{
+  transform: skew(-20deg);
+}
+.text-outline {
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+@media (max-width: 767px) {
+  header
+  {
+    z-index: 1;
+  }
+.text-4xl {
+    font-size: 1.25rem/* 36px */;
+    line-height: 1.5rem/* 40px */;
+}
+  body {
+    overflow: scroll;
+  }
+.skew
+{
+  transform: skew(-10deg);
+}
 }
