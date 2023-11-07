@@ -43,7 +43,7 @@ export default function Home() {
       <a
         className="z-10 fixed top-[35%] text-black text-outline text-xl flex space-x-2 right-0"
         style={{ fontFamily: "MangaSpeak" }}
-        href="https://www.youtube.com/watch?v=KLQpWYPGEcY"
+        href="https://givensomethingwebs.vercel.app"
       >
         <FaArrowRight /> Official Website
       </a>
