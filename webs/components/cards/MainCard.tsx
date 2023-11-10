@@ -16,10 +16,16 @@ const MainCard: React.FC = () => {
       <iframe
         width="100%"
         height="80%"
-        src="https://www.youtube.com/embed/fzTgVrAJNMM"
-        allowFullScreen
+        src="https://www.youtube.com/embed/rcW3XbLvkD8"
       ></iframe>
-      <span className={classnames("p-2","text-xs backdrop-blur-md w-full flex text-center")}>The Downfall Of Mobile Games...</span>
+      <span
+        className={classnames(
+          "p-2",
+          "text-xs backdrop-blur-md w-full flex text-center"
+        )}
+      >
+        The Downfall Of Mobile Games...
+      </span>
       <span className="w-full flex bg-black p-2">
         Full video on YouTube{" "}
         <a className="text-white m-1">
